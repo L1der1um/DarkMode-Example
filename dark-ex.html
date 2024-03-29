@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alterar Cor de Fundo</title>
+
+<style>
+
+:root {
+
+--body-bg: #fafafa;
+
+--body-color: #3f3f3f;
+
+--link-color: #002ca5;
+
+--link-color-hover: #ec5840;
+
+--body-bg-dm: #212529;
+
+--body-color-dm: #899095;
+
+--link-color-dm: #dee2e6;
+
+--link-color-hover-dm: #3cc368;
+
+}
+
+body {
+
+margin: 0;
+
+padding: 2%;
+
+font-family: Arial, Helvetica, sans-serif;
+
+min-height: 100vh;
+
+background-color: var(--body-bg);
+
+color: var(--body-color);
+
+/* Cor de fundo padrão */
+
+transition: 1s;
+
+/* Transição suave da cor de fundo */
+
+}
+
+a {
+
+color: var(--link-color);
+
+cursor: pointer;
+
+transition: color 0.5s;
+
+}
+
+a:hover {
+
+color: var(--link-color-hover);
+
+}
+
+input[type="checkbox"] {
+
+display: none;
+
+}
+
+input[type="checkbox"]:checked~.background {
+
+background-color: var(--body-bg-dm);
+
+}
+
+input[type="checkbox"]:checked~.conteudo {
+
+color: var(--body-color-dm);
+
+}
+
+input[type="checkbox"]:checked~.conteudo a {
+
+color: var(--link-color-dm);
+
+}
+
+input[type="checkbox"]:checked~.conteudo a:hover {
+
+color: var(--link-color-hover-dm);
+
+}
+
+.background {
+
+position: fixed;
+
+/* Fixa o pseudo-elemento na janela do navegador */
+
+top: 0;
+
+left: 0;
+
+right: 0;
+
+bottom: 0;
+
+min-height: 100vh;
+
+/* Garante que o fundo cubra a altura total da janela */
+
+transition: 1s;
+
+/* Transição suave da cor de fundo */
+
+z-index: -1;
+
+/* Garante que a cor trocada fique por trás dos elementos */
+
+}
+
+.check {
+
+margin: 2%;
+
+float: right;
+
+position: relative;
+
+z-index: 1;
+
+/* Garante que o controle deslizante fique acima do pseudo-elemento de fundo */
+
+display: block;
+
+width: 60px;
+
+height: 30px;
+
+background-color: var(--body-bg-dm);
+
+cursor: pointer;
+
+border-radius: 20px;
+
+overflow: hidden;
+
+}
+
+input[type="checkbox"]:checked~.check {
+
+background-color: var(--body-bg);
+
+}
+
+.check::before {
+
+content: '';
+
+position: absolute;
+
+top: 3px;
+
+left: 3px;
+
+background: var(--body-bg);
+
+width: 24px;
+
+height: 24px;
+
+border-radius: 50%;
+
+transition: 1s;
+
+}
+
+input[type="checkbox"]:checked~.check::before {
+
+background-color: var(--body-bg-dm);
+
+transform: translateX(30px);
+
+}
+
+.conteudo {
+
+padding: 2%;
+
+text-align: justify;
+
+}
+
+h1 {
+
+font-size: 25px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<input type="checkbox" id="toggle">
+
+<label for="toggle" class="check"></label>
+
+<div class="background"></div><!-- Pseudo-elemento para o fundo -->
+
+<div class="conteudo"><!-- Toto conteúdo HTML tem que estar aqui -->
+
+<section>
+
+<article>
+
+<h1>O Nosso Sistema Solar: Uma Viagem pelo Cosmos</h1>
+
+<p>Imagine que estamos sentados em uma espaçonave imaginária, prontos para embarcar em uma jornada pelo
+
+nosso sistema solar. À nossa frente, o vasto cosmos se estende, pontilhado de estrelas, planetas e
+
+outros corpos celestes. O nosso ponto de partida é aqui, na Terra, o terceiro planeta a partir do
+
+Sol,
+
+que é apenas uma das centenas de bilhões de estrelas na nossa galáxia, a Via Láctea.</p>
+
+<h2>O <a>Sol</a>: O Coração do Sistema Solar</h2>
+
+<p>No centro do nosso sistema solar está o Sol, uma estrela gigante e brilhante que contém mais de 99%
+
+da
+
+massa total do sistema. É uma esfera quase perfeita de plasma, em constante fusão nuclear,
+
+transformando
+
+hidrogênio em hélio e liberando uma quantidade imensa de energia. Essa energia é vital para a vida
+
+na
+
+Terra, pois fornece luz e calor, além de influenciar o clima e os padrões meteorológicos do nosso
+
+planeta.</p>
+
+<h2>Os Planetas: Mundos Diversos e Fascinantes</h2>
+
+<p>Circundando o Sol, temos oito planetas, cada um com suas características únicas. Vamos começar com os
+
+quatro planetas rochosos mais próximos do Sol: Mercúrio, Vênus, Terra e Marte. Mercúrio, o menor dos
+
+planetas, tem uma superfície cheia de crateras e temperaturas extremas. Vênus, envolto em nuvens
+
+espessas de dióxido de carbono, possui um efeito estufa descontrolado que o torna o planeta mais
+
+quente
+
+do sistema solar. A Terra, nosso lar, é o único planeta conhecido até agora que abriga vida, com uma
+
+diversidade de ecossistemas e um equilíbrio delicado entre terra, água e atmosfera. Marte, o planeta
+
+vermelho, fascina os humanos há séculos e é o foco de muitas missões de exploração em busca de
+
+sinais de
+
+vida passada ou presente.</p>
+
+<p>Além da cintura de asteroides, encontramos os gigantes gasosos: Júpiter, Saturno, Urano e Netuno.
+
+Júpiter
+
+é o maior planeta do nosso sistema solar, com uma Grande Mancha Vermelha que é, na verdade, uma
+
+tempestade gigantesca. Saturno é conhecido por seus anéis espetaculares, compostos principalmente de
+
+gelo e rocha. Urano e Netuno, os gigantes de gelo, possuem atmosferas ricas em água, amônia e
+
+metano, e
+
+são conhecidos por suas cores azuladas.</p>
+
+<h2>Outros Membros do Sistema Solar</h2>
+
+<p>Além dos planetas, temos uma variedade de outros corpos celestes, como os planetas anões (Plutão
+
+sendo o
+
+mais famoso), cometas, asteroides e a misteriosa Nuvem de Oort, que é pensada para ser a fonte de
+
+muitos
+
+cometas de longo período que visitam o interior do nosso sistema solar.</p>
+
+<h2>A Importância do Sistema Solar</h2>
+
+<p>Estudar o nosso sistema solar não é apenas uma questão de curiosidade científica; é essencial para
+
+entendermos o nosso lugar no universo. Cada descoberta nos ajuda a compreender melhor a formação e
+
+evolução do nosso próprio planeta e das condições necessárias para a vida existir.</p>
+
+<h2>Conclusão: Olhando para o Futuro</h2>
+
+<p>Enquanto olhamos para as estrelas, sonhamos com o futuro da exploração espacial. Com cada missão,
+
+seja
+
+enviando sondas a planetas distantes ou planejando a colonização de Marte, expandimos nosso
+
+conhecimento
+
+e nos aproximamos de responder algumas das perguntas mais fundamentais da humanidade: estamos
+
+sozinhos
+
+no universo? Como tudo começou?</p>
+
+<p>E assim, terminamos nossa viagem imaginária pelo sistema solar, mas a verdadeira jornada da
+
+humanidade
+
+pelo espaço está apenas começando. Quem sabe o que descobriremos a seguir?</p>
+
+</article>
+
+</section>
+
+</div>
+
+</body>
+
+</html>
